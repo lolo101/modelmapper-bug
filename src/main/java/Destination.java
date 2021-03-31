@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Objects;
 
@@ -35,7 +36,9 @@ public class Destination {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Destination that = (Destination) o;
-        return items.equals(that.items) && node1.equals(that.node1) && node2.equals(that.node2);
+        return Arrays.equals(items.toArray(), that.items.toArray())
+                && node1.equals(that.node1)
+                && node2.equals(that.node2);
     }
 
     @Override
